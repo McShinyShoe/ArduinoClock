@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-mini", "id": "bb1", "top": -107, "left": -108, "attrs": {} },
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": -421.8, "left": -301.2, "attrs": {} },
+    { "type": "wokwi-ds1307", "id": "rtc1", "top": -216.6, "left": -19.1, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 54.4,
+      "left": -32.8,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "rtc1:GND", "bb1:5t.a", "black", [ "h0" ] ],
+    [ "rtc1:5V", "bb1:6t.a", "red", [ "h0" ] ],
+    [ "rtc1:SDA", "bb1:7t.a", "green", [ "h0" ] ],
+    [ "rtc1:SCL", "bb1:8t.a", "green", [ "h0" ] ],
+    [ "lcd1:VCC", "bb1:6t.e", "red", [ "h0" ] ],
+    [ "lcd1:GND", "bb1:5t.e", "black", [ "h-28.8", "v-153.6" ] ],
+    [ "lcd1:SDA", "bb1:7t.e", "green", [ "h0" ] ],
+    [ "lcd1:SCL", "bb1:8t.e", "green", [ "h0" ] ],
+    [ "mega:5V", "bb1:6t.c", "red", [ "v170.1", "h88.7" ] ],
+    [ "mega:GND.2", "bb1:5t.c", "black", [ "v160.5", "h69.35" ] ],
+    [ "mega:20", "bb1:7t.c", "green", [ "v326.4", "h-65.2" ] ],
+    [ "mega:21", "bb1:8t.c", "green", [ "v336", "h-65.1" ] ]
+  ],
+  "dependencies": {}
+}
